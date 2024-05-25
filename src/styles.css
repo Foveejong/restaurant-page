@@ -13,6 +13,7 @@
     --button-border-radius: 10px;
     --title-font-size: clamp(3vw, 3.5rem, 6vw); 
     --subtitle-font-size: clamp(1vw, 1.5rem, 2vw); 
+    --dirty-orange: rgba(196, 137, 28, 0.8);
 }
 
 @font-face {
@@ -64,7 +65,7 @@ button.selected::after, button.selected::before {
     position: absolute;
     width: var(--size);
     height: var(--size);
-    background-image: radial-gradient(circle at 100% 100%, transparent calc(var(--size) + 2px), var(--selected-white) var(--size));
+    background-image: radial-gradient(circle at 100% 100%, transparent calc(var(--size) + 0.2px), var(--selected-white) var(--size));
 }
 
 button::after {
@@ -108,6 +109,7 @@ header > h1 {
 
 .title-container h1, .opening-hours h1 {
     font-size: var(--title-font-size);
+    color: var(--dirty-orange);
 }
 
 .introduction {
@@ -147,6 +149,7 @@ header > h1 {
 .footer h1 {
     flex: 3; 
     font-size: var(--title-font-size);
+    color: var(--dirty-orange);
 }
 
 .footer .signs-container {
@@ -158,4 +161,38 @@ header > h1 {
     > img:first-child {
         height: calc(var(--title-font-size) * 1.2);
     }
+}
+
+/* menu page */
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+ul.mains {
+    margin: 2vh 0;
+}
+
+li.food-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+li > .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    font-size: calc(var(--subtitle-font-size) + 0.4rem);
+    color: var(--dirty-orange);
+    font-weight: 900;
+}
+
+.price, .description {
+    font-size: calc(var(--subtitle-font-size));
 }
