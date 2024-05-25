@@ -134,6 +134,11 @@ header > h1 {
     aspect-ratio: 1;
 }
 
+.svg:hover {
+    cursor: pointer;
+    filter: invert(55%) sepia(100%) hue-rotate(-10deg) saturate(2);
+}
+
 .footer {
     display: flex;
     align-items: center;
