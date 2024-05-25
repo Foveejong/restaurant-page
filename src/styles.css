@@ -1,0 +1,95 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: customFont;
+    /* border: red 1px solid; */
+}
+
+:root {
+    --centering-padding: 0 25vw;
+    --faded-white: rgba(255, 255, 255, 0.7);
+    --selected-white: rgba(255, 255, 255, 0.85);
+    --button-border-radius: 10px;
+}
+
+@font-face {
+    font-family: customFont;
+    src: url(../fonts/journal-webfont.woff2\ copy) format('woff2'),
+    url(../fonts/journal-webfont.woff\ copy) format('woff');
+}
+
+body {
+    background: url(../imG/louis-hansel-u13IpYtZ9I8-unsplash.jpg), linear-gradient(rgb(133, 237, 255), rgb(255, 201, 255));
+    background-size: cover;
+    padding: var(--centering-padding);
+}
+
+div#content {
+    height: 100vh;
+}
+
+nav.navbar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 3vw;
+    gap: 3vw;
+    align-items: center;
+}
+
+button {
+    outline: none;
+    background-color: var(--faded-white);
+    border-style: none;
+    outline: none;
+    border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
+    padding: 1vh 3vw;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+button.selected::after, button.selected::before {
+    --size: var(--button-border-radius);
+    content: "";
+    position: absolute;
+    width: var(--button-border-radius);
+    aspect-ratio: 1;
+    background-image: radial-gradient(circle at 100% 100%, transparent calc(var(--size) + 2px), var(--selected-white) var(--size));
+}
+
+button::after {
+    bottom: 0;
+    left: 100%;
+    rotate: -90deg;
+}
+
+button::before {
+    bottom: 0;
+    right: 100%;
+    rotate: 180deg;
+}
+
+header {
+    /* padding: var(--centering-padding); */
+
+    & h1 {
+        font-size: 6rem;
+        font-weight: 1000;
+        letter-spacing: 10px;
+        color: white;
+        text-align: center;
+        padding: 3vh 0;
+    }
+}
+
+.selected {
+    background-color: var(--selected-white);
+}
+
+.main-page-container {
+    height: 100vh;
+    background-color: var(--selected-white);
+    border-radius: calc(2 * var(--button-border-radius));
+}
