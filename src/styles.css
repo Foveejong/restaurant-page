@@ -11,12 +11,19 @@
     --faded-white: rgba(255, 255, 255, 0.7);
     --selected-white: rgba(255, 255, 255, 0.85);
     --button-border-radius: 10px;
+    --title-font-size: clamp(3vw, 3.5rem, 6vw); 
+    --subtitle-font-size: clamp(1vw, 1.5rem, 2vw); 
 }
 
 @font-face {
     font-family: customFont;
     src: url(../fonts/journal-webfont.woff2\ copy) format('woff2'),
     url(../fonts/journal-webfont.woff\ copy) format('woff');
+}
+
+@font-face {
+    font-family: lemonMilk;
+    src: url(../fonts/lemon_milk/LEMONMILK-Light.otf) format('otf');
 }
 
 body {
@@ -26,7 +33,7 @@ body {
 }
 
 div#content {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 nav.navbar {
@@ -44,18 +51,19 @@ button {
     outline: none;
     border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
     padding: 1vh 3vw;
-    font-size: 2rem;
+    font-size: calc(0.7 * var(--title-font-size));
     letter-spacing: 3px;
     position: relative;
     cursor: pointer;
+    /* width: clamp(9vw, 200px, 12vw) */
 }
 
 button.selected::after, button.selected::before {
     --size: var(--button-border-radius);
     content: "";
     position: absolute;
-    width: var(--button-border-radius);
-    aspect-ratio: 1;
+    width: var(--size);
+    height: var(--size);
     background-image: radial-gradient(circle at 100% 100%, transparent calc(var(--size) + 2px), var(--selected-white) var(--size));
 }
 
@@ -71,17 +79,18 @@ button::before {
     rotate: 180deg;
 }
 
-header {
-    /* padding: var(--centering-padding); */
+button:hover {
+    color: rgb(198, 147, 46);
+    background-color: var(--selected-white);
+}
 
-    & h1 {
+header > h1 {
         font-size: 6rem;
-        font-weight: 1000;
+        font-weight: 900;
         letter-spacing: 10px;
         color: white;
         text-align: center;
         padding: 3vh 0;
-    }
 }
 
 .selected {
@@ -89,7 +98,59 @@ header {
 }
 
 .main-page-container {
+    padding: 2rem 3rem;
     height: 100vh;
     background-color: var(--selected-white);
     border-radius: calc(2 * var(--button-border-radius));
+}
+
+/* Home page */
+
+.title-container h1, .opening-hours h1 {
+    font-size: var(--title-font-size);
+}
+
+.introduction {
+    margin-bottom: 4vh;
+    > h2 {
+        font-size: var(--subtitle-font-size);
+        font-family: cursive;
+        font-weight: 200;
+    }
+}
+
+.opening-hours ul {
+    list-style-type: none;
+}
+
+.opening-hours ul li {
+    font-size: var(--subtitle-font-size);
+    margin: 2vh 0;
+    font-family: cursive;
+}
+
+.svg {
+    height: var(--title-font-size);
+    aspect-ratio: 1;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+.footer h1 {
+    flex: 3; 
+    font-size: var(--title-font-size);
+}
+
+.footer .signs-container {
+    flex: 1 1 0;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+
+    > img:first-child {
+        height: calc(var(--title-font-size) * 1.2);
+    }
 }

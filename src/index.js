@@ -1,3 +1,6 @@
 import "./styles.css";
+import { createHomePage } from "./home.js";
 
-console.log("hi");
+const content = document.querySelector("#content");
+const homepage = createHomePage();
+content.appendChild(homepage);
