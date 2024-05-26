@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: customFont;
     /* border: red 1px solid; */
+    letter-spacing: 2px;
 }
 
 :root {
@@ -53,7 +54,6 @@ button {
     border-radius: var(--button-border-radius) var(--button-border-radius) 0 0;
     padding: 1vh 3vw;
     font-size: calc(0.7 * var(--title-font-size));
-    letter-spacing: 3px;
     position: relative;
     cursor: pointer;
     /* width: clamp(9vw, 200px, 12vw) */
@@ -195,4 +195,48 @@ li > .top {
 
 .price, .description {
     font-size: calc(var(--subtitle-font-size));
+}
+
+.feedback-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 3rem;
+}
+
+.feedback-container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10vh;
+}
+
+.account-info p.account {
+    color: rgb(199, 154, 70);
+    font-size: var(--title-font-size);
+}
+
+.account-info {
+    min-width: 10vw;
+}
+
+.feedback {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    border-style: double;
+    border-color: var(--dirty-orange);
+    border-radius: 30px;
+    border-width: 0.5rem;
+    padding: 1rem 2rem;
+    & img {
+        border-radius: 50%;
+        height: 6vh;
+        width: 6vh;
+    }
+    & p {
+        font-size: calc(var(--subtitle-font-size)*1.2);
+    }
 }
