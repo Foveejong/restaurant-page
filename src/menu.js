@@ -51,7 +51,7 @@ function createMenu() {
     const salad = new Fooditem("Bar's Salad", 12, "Mesclun Avocado, Cherry Tomato, Pumpkin seeds, Baby Corn, Sesame Dressing");
     const grain = new Fooditem("Salmon Grain Bowl", 15, "Quinoa, Miso Salmon, Furikake, Hanjuku Egg, Roasted Sesame Dressing");
     const breakfast = new Fooditem("Bar's Breakfast", 20, "Light Buttered Sourdough, Tater Tots, Bacon Steak, Pork Sausages, Scrambled Eggs");
-    const rigatoni = new Fooditem("fries", 20, "Rigatoni, Blue Swimmer Crab, Tomato Sauce, White Wine, Garlic, Parmesan");
+    const rigatoni = new Fooditem("Spicy Tomato Crab Rigatoni", 20, "Rigatoni, Blue Swimmer Crab, Tomato Sauce, White Wine, Garlic, Parmesan");
     const sandwich = new Fooditem("Grilled Cheese Sandwich", 15, "Buttered Sourdough, Cheddar, Bacon Steak, Mustard, Caramelised Onions");
     const affogato = new Fooditem("Bar's Affogato", 10, "Espresso, Chocolate Sauce and Cookkies & Cream Ice Cream");
     const coldbrew = new Fooditem("Specialty Cold Brew", 8, "Seasonal");
