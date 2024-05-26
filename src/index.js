@@ -7,4 +7,5 @@ const content = document.querySelector("#content");
 // content.appendChild(homepage);
 
 const menu = createMenu();
+
 content.appendChild(menu);
