@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: customFont;
-    /* border: red 1px solid; */
     letter-spacing: 2px;
 }
 
@@ -165,7 +164,7 @@ header > h1 {
 
 /* menu page */
 
-ul {
+ul.starters, ul.mains, ul.coffee {
     display: flex;
     flex-direction: column;
     gap: 3vh;
